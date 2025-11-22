@@ -144,3 +144,19 @@ class WeatherApp(tk.Tk):
         self.detail_feels_like.config(text=data.get("feels_like", "—"))
         self.detail_humidity.config(text=data.get("humidity", "—"))
         self.detail_wind.config(text=data.get("wind", "—"))
+
+    def _add_placeholder(self, entry: tk.Entry, placeholder: str):
+        def on_focus_in(event):
+            if entry.get() == placeholder:
+                entry.delete(0, "end")
+                entry.config(fg=TEXT_PRIMARY)
+
+        def on_focus_out(event):
+            if not entry.get().strip():
+                entry.insert(0, placeholder)
+                entry.config(fg=PLACEHOLDER_COLOR)
+
+        entry.insert(0, placeholder)
+        entry.config(fg=PLACEHOLDER_COLOR)
+        entry.bind("<FocusIn>", on_focus_in)
+        entry.bind("<FocusOut>", on_focus_out)
