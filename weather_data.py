@@ -1,5 +1,7 @@
 import requests
-import pprint
+f=open("apikey.txt","r")
+ak=f.read()
+ak=ak[11:len(ak)-1]
 class WeatherData:
     def __init__(self, api_key):
         if not api_key:
@@ -9,7 +11,7 @@ class WeatherData:
         self.weather_desc = ""
     
     def get_weather(city):
-        api_key = '5af87fc9a05b07b4756ce35d48eb89c1'  # Replace with your OpenWeatherMap API key
+        api_key = ak 
         base_url = "https://api.openweathermap.org/data/2.5/weather"
         params = {'q': city, 'appid': api_key, 'units': 'metric'}
         response = requests.get(base_url, params=params)
@@ -21,7 +23,6 @@ class WeatherData:
             print(f"Weather in {city}: {weather_desc}")
             print(f"Temperature: {main['temp']}°C")
             print(f"Humidity: {main['humidity']}%")
-            # print(pprint.pprint(data))
             print(main)
             
         else:
