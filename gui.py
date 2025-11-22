@@ -136,3 +136,11 @@ class WeatherApp(tk.Tk):
         val.pack(side="right")
 
         setattr(self, f"detail_{key}", val)
+
+    def update_weather(self, data: dict):
+        self.city_label.config(text=data.get("city", "—"))
+        self.condition_label.config(text=data.get("condition", "—"))
+        self.temp_label.config(text=data.get("temp", "—"))
+        self.detail_feels_like.config(text=data.get("feels_like", "—"))
+        self.detail_humidity.config(text=data.get("humidity", "—"))
+        self.detail_wind.config(text=data.get("wind", "—"))
