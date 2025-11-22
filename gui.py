@@ -160,3 +160,31 @@ class WeatherApp(tk.Tk):
         entry.config(fg=PLACEHOLDER_COLOR)
         entry.bind("<FocusIn>", on_focus_in)
         entry.bind("<FocusOut>", on_focus_out)
+
+    def _on_search(self, event=None):
+        query = self.search_var.get()
+        if not query or query.startswith("Enter city"):
+            original_bg = self.search_entry["bg"]
+            self.search_entry.config(bg="#FFEFEF")
+            self.after(220, lambda: self.search_entry.config(bg=original_bg))
+            return
+
+        data = self.wd.get_weather(query)
+        if data:
+            self.update_weather({
+                "city": query.title(),
+                "temp": f"{self.wd.main['temp']}°C",
+                "feels_like": f"{self.wd.main['feels_like']}°C",
+                "humidity": f"{self.wd.main['humidity']}%",
+                "condition": self.wd.weather_desc,
+                "wind": "—",  # Add wind data if available
+            })
+        else:
+            self.update_weather({
+                "city": "Not found",
+                "temp": "—",
+                "feels_like": "—",
+                "humidity": "—",
+                "condition": "Not available",
+                "wind": "—",
+            })
