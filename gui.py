@@ -39,3 +39,43 @@ class WeatherApp(tk.Tk):
 
         self._create_search_bar()
         self._create_main_panels()
+
+    def _create_search_bar(self):
+        top_frame = tk.Frame(self.container, bg=BG_COLOR)
+        top_frame.pack(fill="x", pady=(0, 14))
+
+        # Search Entry with placeholder behavior
+        entry_bg = PANEL_COLOR
+        self.search_var = tk.StringVar()
+        entry_frame = tk.Frame(top_frame, bg=entry_bg, bd=0)
+        entry_frame.pack(side="left", fill="x", expand=True)
+
+        self.search_entry = tk.Entry(
+            entry_frame,
+            textvariable=self.search_var,
+            fg=TEXT_PRIMARY,
+            bg=entry_bg,
+            relief="flat",
+            font=self.font_medium,
+            insertbackground=TEXT_PRIMARY,
+            highlightthickness=0,
+        )
+        self.search_entry.pack(fill="x", ipady=10, padx=(10, 0))
+        self.search_entry.bind("<Return>", self._on_search)
+        self._add_placeholder(self.search_entry, "Enter city name, e.g. London")
+
+        # Search Button
+        search_btn = tk.Button(
+            top_frame,
+            text="Search",
+            command=self._on_search,
+            bg=ACCENT,
+            fg="white",
+            bd=0,
+            activebackground="#1E7CE8",
+            font=self.font_button,
+            padx=20,
+            pady=8,
+            cursor="hand2",
+        )
+        search_btn.pack(side="right", padx=(12, 0))
