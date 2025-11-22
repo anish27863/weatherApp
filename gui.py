@@ -79,3 +79,48 @@ class WeatherApp(tk.Tk):
             cursor="hand2",
         )
         search_btn.pack(side="right", padx=(12, 0))
+
+    def _create_main_panels(self):
+        main_frame = tk.Frame(self.container, bg=BG_COLOR)
+        main_frame.pack(fill="both", expand=True)
+
+        left_frame = tk.Frame(main_frame, bg=BG_COLOR)
+        left_frame.pack(side="left", fill="both", expand=True)
+
+        shadow = tk.Frame(left_frame, bg="#E6EAF2", bd=0)
+        shadow.place(relx=0.02, rely=0.05, relwidth=0.94, relheight=0.9)
+
+        self.temp_box = tk.Frame(left_frame, bg=TEMP_BOX_COLOR, bd=0)
+        self.temp_box.place(relx=0.0, rely=0.0, relwidth=0.94, relheight=0.9)
+
+        self.city_label = tk.Label(self.temp_box, text="City", bg=TEMP_BOX_COLOR, fg=TEXT_SECONDARY,
+                                   font=self.font_small)
+        self.city_label.pack(anchor="nw", padx=18, pady=(14, 0))
+
+        self.condition_label = tk.Label(self.temp_box, text="Condition", bg=TEMP_BOX_COLOR, fg=TEXT_SECONDARY,
+                                        font=self.font_small)
+        self.condition_label.pack(anchor="nw", padx=18, pady=(2, 0))
+
+        temp_frame = tk.Frame(self.temp_box, bg=TEMP_BOX_COLOR)
+        temp_frame.pack(expand=True)
+
+        self.temp_label = tk.Label(temp_frame, text="0°C", bg=TEMP_BOX_COLOR, fg=TEXT_PRIMARY,
+                                   font=self.font_large)
+        self.temp_label.pack(anchor="center")
+
+        right_frame = tk.Frame(main_frame, bg=BG_COLOR, width=220)
+        right_frame.pack(side="right", fill="y", padx=(14, 0))
+
+        self.small_box = tk.Frame(right_frame, bg=SMALL_BOX_COLOR, bd=0)
+        self.small_box.pack(fill="both", expand=True)
+
+        small_title = tk.Label(self.small_box, text="Details", bg=SMALL_BOX_COLOR, fg=TEXT_SECONDARY,
+                               font=self.font_medium)
+        small_title.pack(anchor="nw", padx=12, pady=(12, 6))
+
+        self.details_container = tk.Frame(self.small_box, bg=SMALL_BOX_COLOR)
+        self.details_container.pack(fill="both", expand=True, padx=12, pady=(0, 12))
+
+        self._create_detail_row("Feels like:", "feels_like")
+        self._create_detail_row("Humidity:", "humidity")
+        self._create_detail_row("Wind:", "wind")
