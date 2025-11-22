@@ -29,5 +29,5 @@ class WeatherData:
             print(f"City {city} not found. Please check the name.")
 
 
-    city = input("Enter city name: ")
-    get_weather(city)
+    # city = input("Enter city name: ")
+    # get_weather(city)
