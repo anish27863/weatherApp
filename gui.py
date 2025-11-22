@@ -188,3 +188,7 @@ class WeatherApp(tk.Tk):
                 "condition": "Not available",
                 "wind": "—",
             })
+
+if __name__ == "__main__":
+    app = WeatherApp()
+    app.mainloop()
