@@ -124,3 +124,15 @@ class WeatherApp(tk.Tk):
         self._create_detail_row("Feels like:", "feels_like")
         self._create_detail_row("Humidity:", "humidity")
         self._create_detail_row("Wind:", "wind")
+
+    def _create_detail_row(self, label_text, key):
+        row = tk.Frame(self.details_container, bg=SMALL_BOX_COLOR)
+        row.pack(fill="x", pady=6)
+
+        lbl = tk.Label(row, text=label_text, bg=SMALL_BOX_COLOR, fg=TEXT_SECONDARY, font=self.font_small)
+        lbl.pack(side="left")
+
+        val = tk.Label(row, text="—", bg=SMALL_BOX_COLOR, fg=TEXT_PRIMARY, font=self.font_small)
+        val.pack(side="right")
+
+        setattr(self, f"detail_{key}", val)
