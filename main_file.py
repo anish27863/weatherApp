@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import font as tkfont
 from weather_data import WeatherData
-wd=WeatherData()
 
 # GUI Configuration / constants
 WIN_WIDTH = 350
@@ -39,6 +38,7 @@ class WeatherApp(tk.Tk):
 
         self._create_search_bar()
         self._create_main_panels()
+
 
     def _create_search_bar(self):
         top_frame = tk.Frame(self.container, bg=BG_COLOR)
@@ -87,8 +87,7 @@ class WeatherApp(tk.Tk):
         left_frame = tk.Frame(main_frame, bg=BG_COLOR)
         left_frame.pack(side="left", fill="both", expand=True)
 
-        shadow = tk.Frame(left_frame, bg="#E6EAF2", bd=0)
-        shadow.place(relx=0.02, rely=0.05, relwidth=0.94, relheight=0.9)
+        #
 
         self.temp_box = tk.Frame(left_frame, bg=TEMP_BOX_COLOR, bd=0)
         self.temp_box.place(relx=0.0, rely=0.0, relwidth=0.94, relheight=0.9)
@@ -189,6 +188,6 @@ class WeatherApp(tk.Tk):
                 "wind": "—",
             })
 
-if __name__ == "__main__":
-    app = WeatherApp()
-    app.mainloop()
+
+app = WeatherApp()
+app.mainloop()
