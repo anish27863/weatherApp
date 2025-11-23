@@ -177,7 +177,7 @@ class WeatherApp(tk.Tk):
                 "feels_like": f"{self.wd.main['feels_like']}°C",
                 "humidity": f"{self.wd.main['humidity']}%",
                 "condition": self.wd.weather_desc,
-                "wind": "—",  # Add wind data if available
+                "wind": f"{self.wd.data['wind']['speed']} kmph",
             })
         else:
             self.update_weather({
