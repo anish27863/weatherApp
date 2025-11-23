@@ -20,3 +20,7 @@ A simple, lightweight GUI weather app that shows the current weather for any pla
 - Keep API keys out of source control and configurable via environment variables or a config file
 
 ## Output Screens
+![Image1](<Output Screens/Screenshot 2025-11-23 150058.png>)
+![Image2](<Output Screens/Screenshot 2025-11-23 150124.png>)
+![Image1](<Output Screens/Screenshot 2025-11-23 150211.png>)
+![Image2](<Output Screens/Screenshot 2025-11-23 150139.png>)
