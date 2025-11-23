@@ -6,7 +6,7 @@ wd=WeatherData()
 
 # GUI Configuration / constants
 WIN_WIDTH = 350
-WIN_HEIGHT = 800
+WIN_HEIGHT = 400
 BG_COLOR = "#F3F6FA"
 PANEL_COLOR = "#FFFFFF"
 ACCENT = "#2B90FF"
