@@ -24,3 +24,4 @@ A simple, lightweight GUI weather app that shows the current weather for any pla
 ![Image2](<Output Screens/Screenshot 2025-11-23 150124.png>)
 ![Image1](<Output Screens/Screenshot 2025-11-23 150211.png>)
 ![Image2](<Output Screens/Screenshot 2025-11-23 150139.png>)
+![Image2](<Output Screens/Screenshot 2025-11-23 151852.png>)
