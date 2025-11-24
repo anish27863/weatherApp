@@ -5,7 +5,7 @@ A simple, lightweight GUI weather app that shows the current weather for any pla
 ## Features
 - Instant current-weather lookup for a specified location
 - Clear, minimal graphical interface for quick reading
-- Temperature (Celsius/Fahrenheit), humidity, wind speed, condition, and icon
+- Temperature, humidity, wind speed, condition
 - Basic error handling for invalid locations or network issues
 - API key support
 
