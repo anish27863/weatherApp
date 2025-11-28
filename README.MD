@@ -195,13 +195,13 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install requests
 ```
 ## Screenshots
-* Startup Screen ![on startup](<Output Screens/Screenshot 2025-11-23 150058.png>)
+* **Startup Screen** ![on startup](<Output Screens/Screenshot 2025-11-23 150058.png>)
 
 
-* Query 1![alt text](<Output Screens/Screenshot 2025-11-23 150124.png>)
-* Query 2![alt text](<Output Screens/Screenshot 2025-11-23 150139.png>)
-* Query 3![alt text](<Output Screens/Screenshot 2025-11-23 150211.png>)
-* Error Handling Demonstration![alt text](<Output Screens/Screenshot 2025-11-23 151852.png>)
+* **Query 1**![alt text](<Output Screens/Screenshot 2025-11-23 150124.png>)
+* **Query 2**![alt text](<Output Screens/Screenshot 2025-11-23 150139.png>)
+* **Query 3**![alt text](<Output Screens/Screenshot 2025-11-23 150211.png>)
+* **Error Handling Demonstration**![alt text](<Output Screens/Screenshot 2025-11-23 151852.png>)
 ## 🐛 Troubleshooting
 
 | Issue | Solution |
